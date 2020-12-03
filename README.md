@@ -1,0 +1,1 @@
+This is a simple game to get all squares to turn the same color.
