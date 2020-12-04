@@ -1,3 +1,6 @@
+body{
+	background-color: #1e2a3a;
+}
 #game-window{
 	text-align: center;
 }
@@ -12,6 +15,12 @@
 }
 #game-section, #color-button-container{
 	margin-bottom: 10px;
+}
+#controls-section{
+	margin-bottom: 10px;
+	background-color: #aaaaaa;
+	border-radius: 8px;
+	padding: 6px 6px;
 }
 
 #lose-button, #win-button, #reset-button {
@@ -41,12 +50,14 @@
 
 #move-counter{
 	margin-bottom: 10px;
+	padding-top: 10px;
 }
 
 #moves-left-container{
 	border: 1px solid black;
 	padding: 6px 6px;
-	background-color:#aaaaaa;
+	background-color:#1e2a3a;
+	color: white;
 	font-size:15px;
 	font-weight:bold;
 }
