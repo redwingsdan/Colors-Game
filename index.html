@@ -14,17 +14,24 @@
 				</div>
 				<div id="win-modal">
 					You win!
-					<button onclick="startGameAgain()">Play Again?</button>
+					<button id="win-button" onclick="startGameAgain()">Play Again?</button>
+				</div>
+				<div id="lose-modal">
+					You lose on level <span id="lose-game-level"></span>
+					<button id="lose-button" onclick="resetGame()">Play Again?</button>
 				</div>
 			</div>
 			<div id="controls-section">
 				<div id="move-counter">
 					<span id="moves-left-container"></span> Moves Left
 				</div>
+				<div id="level-container">
+					Level <span id="game-level"></span>
+				</div>
 				<div id="color-button-container">
 				</div>
 				<div id="reset-container">
-					<button onclick="resetGame()">Reset</button>
+					<button id="reset-button" onclick="resetGame()">Reset</button>
 				</div>
 			</div>
 		</div>

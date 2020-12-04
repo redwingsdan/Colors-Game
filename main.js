@@ -6,6 +6,7 @@ const colorMap = {
 	4: {colorClass: 'pink'},
 	5: {colorClass: 'gray'}
 };
+const DEFAULT_MOVES = 30;
 var initialMovesLeft;
 var movesLeft;
 const rows = 14;
@@ -16,6 +17,7 @@ function startGame() {
 	randomizeSquareColors();
 	movesLeft = initialMovesLeft;
 	document.getElementById('moves-left-container').innerHTML = movesLeft;
+	document.getElementById('game-level').innerHTML = (DEFAULT_MOVES - initialMovesLeft) + 1;
 }
 
 function populateSquares() {
@@ -161,11 +163,18 @@ function changeColor(colorIndex) {
 		return;
 	}
 	movesLeft--;
+	if (movesLeft <= 0) {
+		document.getElementById('lose-modal').style.display = 'block';
+		document.getElementById('controls-section').style.display = 'none';
+		document.getElementById('lose-game-level').innerHTML = (DEFAULT_MOVES - initialMovesLeft) + 1;
+	}
 	document.getElementById('moves-left-container').innerHTML = movesLeft;
 }
 
 function resetGame() {
-	initialMovesLeft = 30;
+	document.getElementById('lose-modal').style.display = 'none';
+	document.getElementById('controls-section').style.display = 'block';
+	initialMovesLeft = DEFAULT_MOVES;
 	startGame();
 }
 
