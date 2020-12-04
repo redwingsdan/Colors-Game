@@ -1,0 +1,33 @@
+.row{
+	display: flex;
+}
+.color-button{
+	border-radius: 20px;
+	height: 30px;
+	width: 30px;
+}
+.square{
+	height: 20px;
+	width: 20px;
+	color: white;
+	border: 1px solid black;
+}
+
+.red{
+	background-color: red;
+}
+.yellow{
+	background-color: yellow;
+}
+.blue{
+	background-color: blue;
+}
+.pink{
+	background-color: pink;
+}
+.green{
+	background-color: green;
+}
+.gray{
+	background-color: gray;
+}

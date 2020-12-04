@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" href="main.css">
+		<script src="main.js"></script>
+	</head>
+	<body>
+		<div id="game-window">
+			<div id="info-section">
+				<span>The aim of the game is to turn all squares to the same color within the allotted number of moves. Click on a colored circle to change the top left square to that color. The color change will affect all connected squares that are the same color as the top left square.</span>
+			</div>
+			<div id="game-section">
+				<div id="game-board">
+				</div>
+				<div id="win-modal">
+					You win!
+					<button onclick="startGameAgain()">Play Again?</button>
+				</div>
+			</div>
+			<div id="controls-section">
+				<div id="move-counter">
+					<span id="moves-left-container"></span> Moves Left
+				</div>
+				<div id="color-button-container">
+				</div>
+				<div id="reset-container">
+					<button onclick="resetGame()">Reset</button>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
