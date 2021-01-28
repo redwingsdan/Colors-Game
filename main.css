@@ -1,8 +1,18 @@
 body{
 	background-color: #1e2a3a;
 }
-#game-window{
+label {
+	color: white;
+}
+#error-container{
+	color: red;
+	margin-bottom: 10px;
+}
+#game-inputs, #game-window{
 	text-align: center;
+}
+#game-board{
+	margin-bottom: 10px;
 }
 #info-section{ 
 	margin-bottom: 10px;
@@ -23,7 +33,7 @@ body{
 	padding: 6px 6px;
 }
 
-#lose-button, #win-button, #reset-button {
+#lose-button, #win-button, #reset-button, #start-button {
 	box-shadow:inset 0px 1px 0px 0px #efdcfb;
 	background:linear-gradient(to bottom, #dfbdfa 5%, #bc80ea 100%);
 	background-color:#dfbdfa;
@@ -39,13 +49,13 @@ body{
 	text-decoration:none;
 	text-shadow:0px 1px 0px #9752cc;
 }
-#lose-button, #win-button, #reset-button:hover {
+#lose-button, #win-button, #reset-button, #start-button:hover {
 	background:linear-gradient(to bottom, #bc80ea 5%, #dfbdfa 100%);
 	background-color:#bc80ea;
 }
-#lose-button, #win-button, #reset-button:active {
+#lose-button, #win-button, #reset-button, #start-button:active {
 	position:relative;
-	top:1px;
+	top: -1px;
 }
 
 #move-counter{
@@ -60,6 +70,14 @@ body{
 	color: white;
 	font-size:15px;
 	font-weight:bold;
+}
+
+#message-container{
+	font-size: 20px;
+    font-weight: bold;
+    background-color: #aaaaaa;
+    border-radius: 8px;
+    padding: 4px 6px;
 }
 
 .row{
@@ -102,4 +120,16 @@ body{
 }
 .gray{
 	background-color: gray;
+}
+.purple{
+	background-color: purple;
+}
+.brown{
+	background-color: brown;
+}
+.teal{
+	background-color: teal;
+}
+.lightblue{
+	background-color: #87CEFA;
 }

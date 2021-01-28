@@ -4,14 +4,18 @@ const colorMap = {
 	2: {colorClass: 'green'},
 	3: {colorClass: 'blue'},
 	4: {colorClass: 'pink'},
-	5: {colorClass: 'gray'}
+	5: {colorClass: 'gray'},
+	6: {colorClass: 'brown'},
+	7: {colorClass: 'purple'},
+	8: {colorClass: 'teal'},
+	9: {colorClass: 'lightblue'}
 };
-const DEFAULT_MOVES = 30;
 var initialMovesLeft;
 var movesLeft;
-const rows = 14;
-const columns = 14;
-const colors = 6;
+var DEFAULT_MOVES = 30;
+var rows = 14;
+var columns = 14;
+var colors = 6;
 
 function startGame() {
 	randomizeSquareColors();
@@ -178,9 +182,53 @@ function resetGame() {
 	startGame();
 }
 
-window.addEventListener('load', function() {
+function submitGameParams() {
+	if (!isValidParams()) {
+		return;
+	}
+	document.getElementById('error-container').style.display = 'none';
+	rows = document.getElementById('grid-size-input').value;
+	columns = document.getElementById('grid-size-input').value;
+	colors = document.getElementById('num-colors-input').value;
+	DEFAULT_MOVES = document.getElementById('num-moves-input').value;
 	document.getElementById('win-modal').style.display = 'none';
+	document.getElementById('game-inputs').style.display = 'none';
+	document.getElementById('game-window').style.display = 'block';
 	populateSquares();
 	populateColors();
 	resetGame();
+}
+
+function isValidParams() {
+	let gridSizeInput = document.getElementById('grid-size-input').value;
+	let colorInput = document.getElementById('num-colors-input').value;
+	let numMovesInput = document.getElementById('num-moves-input').value;
+	// Grid size must be between 2 and 20
+	if (isNaN(gridSizeInput) || gridSizeInput < 2 || gridSizeInput > 20) {
+		document.getElementById('error-container').style.display = 'block';
+		document.getElementById('error-container').innerHTML = 'Grid size must be between 2 and 20';
+		return false;
+	}
+	// Number of colors must be between 2 and 10
+	if (isNaN(colorInput) || colorInput < 2 || colorInput > 10) {
+		document.getElementById('error-container').style.display = 'block';
+		document.getElementById('error-container').innerHTML = 'Number of colors must be between 2 and 10';
+		return false;
+	}
+	// Number of moves must be between 10 and 50
+	if (isNaN(numMovesInput) || numMovesInput < 10 || numMovesInput > 50) {
+		document.getElementById('error-container').style.display = 'block';
+		document.getElementById('error-container').innerHTML = 'Number of moves must be between 10 and 50';
+		return false;
+	}
+	return true;
+}
+
+window.addEventListener('load', function() {
+	document.getElementById('game-inputs').style.display = 'block';
+	document.getElementById('game-window').style.display = 'none';
+	document.getElementById('error-container').style.display = 'none';
+	document.getElementById('grid-size-input').value = rows;
+	document.getElementById('num-colors-input').value = colors;
+	document.getElementById('num-moves-input').value = DEFAULT_MOVES;
 })

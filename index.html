@@ -5,6 +5,25 @@
 		<script src="main.js"></script>
 	</head>
 	<body>
+		<div id="game-inputs">
+			<span>
+				<label>Grid Size</label>
+				<input id="grid-size-input" type="number" min="2" step="1" max="20">
+			</span>
+			<span>
+				<label>Number of Colors</label>
+				<input id="num-colors-input" type="number" min="2" step="1" max="10">
+			</span>
+			<span>
+				<label>Number of Moves</label>
+				<input id="num-moves-input" type="number" min="10" step="1" max="50">
+			</span>
+			<div id="error-container">
+			</div>
+			<div id="reset-container">
+				<button id="start-button" onclick="submitGameParams()">Start Game</button>
+			</div>
+		</div>
 		<div id="game-window">
 			<div id="info-section">
 				<span>The aim of the game is to turn all squares to the same color within the allotted number of moves. Click on a colored circle to change the top left square to that color. The color change will affect all connected squares that are the same color as the top left square.</span>
@@ -13,11 +32,11 @@
 				<div id="game-board">
 				</div>
 				<div id="win-modal">
-					You win!
+					<span id="message-container">You win!</span>
 					<button id="win-button" onclick="startGameAgain()">Play Again?</button>
 				</div>
 				<div id="lose-modal">
-					You lose on level <span id="lose-game-level"></span>
+					<span id="message-container">You lose on level <span id="lose-game-level"></span></span>
 					<button id="lose-button" onclick="resetGame()">Play Again?</button>
 				</div>
 			</div>
